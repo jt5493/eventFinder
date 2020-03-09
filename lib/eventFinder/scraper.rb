@@ -7,7 +7,12 @@ class EventFinder::Scraper
             zip_instance = EventFinder::Zipcode.new(zip)
             events = response["_embedded"]["events"]
             events.each do |n|
-                binding.pry
+                name = n["name"]
+                sale_status = n["dates"]["status"]["code"]
+                venue = n["_embedded"]["venues"][0]["name"]
+                date = n["dates"]["start"]["localDate"]
+                genre = n["_embedded"]["attractions"][0]["classifications"][0]["genre"]["name"]
+                sale_site = n["url"]
             end
         end
     end

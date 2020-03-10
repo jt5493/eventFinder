@@ -20,7 +20,7 @@ class EventFinder::Scraper
                 EventFinder::Details.new(details)
             end
         else
-            puts "Sorry, there are no events in that area. Please enter another zipcode."
+            puts "Sorry, there are no events in that area. Please enter another zipcode.".colorize(:blue)
             input = gets.chomp.to_i
             self.fetch_data(input)
         end

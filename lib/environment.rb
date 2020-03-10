@@ -6,6 +6,7 @@ require_relative "./eventFinder/details"
 require_relative "./eventFinder/zipcode"
 require "pry"
 require "httparty"
+require "colorize"
 
 module EventFinder
   class Error < StandardError; end

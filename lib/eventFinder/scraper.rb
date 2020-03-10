@@ -12,8 +12,14 @@ class EventFinder::Scraper
                 venue = n["_embedded"]["venues"][0]["name"]
                 date = n["dates"]["start"]["localDate"]
                 genre = n["_embedded"]["attractions"][0]["classifications"][0]["genre"]["name"]
-                sale_site = n["url"]
+                buy_tickets = n["url"]
+                EventFinder::Events.new(name, zip_instance)
+                EventFinder::Details.new(name, sale_status, venue, date, genre, buy_tickets)
             end
+        else
+            puts "Sorry, there are no events in that area. Please enter another zipcode."
+            input = gets.chomp.to_i
+            self.fetch_data(input)
         end
     end
 

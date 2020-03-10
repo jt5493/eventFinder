@@ -3,10 +3,9 @@ class EventFinder::Events
 
     @@all = []
 
-    def initialize(event, zipcode, details)
+    def initialize(event, zipcode)
         @event = event
         @zipcode = zipcode
-        @details = details
         @@all << self
 
     end

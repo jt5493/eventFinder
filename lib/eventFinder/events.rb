@@ -1,10 +1,10 @@
 class EventFinder::Events
-    attr_accessor :event, :zipcode, :details
+    attr_accessor :name, :zipcode, :details
 
     @@all = []
 
-    def initialize(event, zipcode)
-        @event = event
+    def initialize(name, zipcode)
+        @name = name
         @zipcode = zipcode
         @@all << self
 

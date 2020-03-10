@@ -7,14 +7,17 @@ class EventFinder::Scraper
             zip_instance = EventFinder::Zipcode.new(zip)
             events = response["_embedded"]["events"]
             events.each do |n|
-                name = n["name"]
-                sale_status = n["dates"]["status"]["code"]
-                venue = n["_embedded"]["venues"][0]["name"]
-                date = n["dates"]["start"]["localDate"]
-                genre = n["_embedded"]["attractions"][0]["classifications"][0]["genre"]["name"]
-                buy_tickets = n["url"]
-                EventFinder::Events.new(name, zip_instance)
-                EventFinder::Details.new(name, sale_status, venue, date, genre, buy_tickets)
+                event =  n["name"]
+                details = {
+                name: n["name"],
+                sale_status: n["dates"]["status"]["code"],
+                venue: n["_embedded"]["venues"][0]["name"],
+                date: n["dates"]["start"]["localDate"],
+                genre: n["_embedded"]["attractions"][0]["classifications"][0]["genre"]["name"],
+                buy_tickets: n["url"]
+                }
+                EventFinder::Events.new(event, zip_instance)
+                EventFinder::Details.new(details)
             end
         else
             puts "Sorry, there are no events in that area. Please enter another zipcode."

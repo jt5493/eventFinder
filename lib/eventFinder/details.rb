@@ -3,12 +3,13 @@ class EventFinder::Details
 
     @@all = []
 
-    def initialize(event, sale_status, venue, date, genre, ticket_url)
-        @sale_status = sale_status
-        @venue = venue
-        @date = date
-        @genre = genre
-        @event = event
+    def initialize(detail_hash)
+        @sale_status = detail_hash[:sale_status]
+        @venue = detail_hash[:venue]
+        @date = detail_hash[:date]
+        @genre = detail_hash[:genre]
+        @event = detail_hash[:name]
+        @ticket_url = detail_hash[:buy_tickets]
         @@all << self
 
     end

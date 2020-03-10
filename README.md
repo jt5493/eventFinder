@@ -1,28 +1,11 @@
 # EventFinder
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/eventFinder`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to EventFinder. This interactive application will allow the user to find upcoming events in their zipcode. After finding those events, the user can then see all the event details including: which venue it is located at, the date the event will take place, whether the event is sold out or not, the genre of the event, and even information on how to purchase tickets.
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'eventFinder'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install eventFinder
 
 ## Usage
 
-TODO: Write usage instructions here
+To get started just type bin/eventFinder in your terminal and follow along with the prompts. You can type exit at any time to stop the application.
 
 ## Development
 

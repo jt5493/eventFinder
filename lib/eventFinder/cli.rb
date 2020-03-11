@@ -6,6 +6,7 @@ class EventFinder::Cli
         EventFinder::Scraper.fetch_data(input)
         display_events
         display_details
+        EventFinder::Events.delete
         call
     end
 
@@ -22,7 +23,7 @@ class EventFinder::Cli
         input = gets.chomp.to_i
         index = input - 1
         event_details = EventFinder::Details.all[index]
-        puts "Event name: #{event_details.event}".colorize(:green)
+        puts "Event name: #{event_details.event.name}".colorize(:green)
         puts "Event venue: #{event_details.venue}".colorize(:green)
         puts "Event genre: #{event_details.genre}".colorize(:green)
         puts "Event date: #{event_details.date}".colorize(:green)

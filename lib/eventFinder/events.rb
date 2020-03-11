@@ -1,11 +1,10 @@
 class EventFinder::Events
-    attr_accessor :name, :zipcode, :details
+    attr_accessor :name
 
     @@all = []
 
-    def initialize(name, zipcode)
+    def initialize(name)
         @name = name
-        @zipcode = zipcode
         @@all << self
 
     end
@@ -14,11 +13,8 @@ class EventFinder::Events
         @@all
     end
 
-
-
-
-
-
-
+    def self.delete
+        self.all.clear
+    end
 
 end

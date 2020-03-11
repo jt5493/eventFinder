@@ -3,12 +3,12 @@ class EventFinder::Details
 
     @@all = []
 
-    def initialize(detail_hash)
+    def initialize(detail_hash, event)
         @sale_status = detail_hash[:sale_status]
         @venue = detail_hash[:venue]
         @date = detail_hash[:date]
         @genre = detail_hash[:genre]
-        @event = detail_hash[:name]
+        @event = event
         @ticket_url = detail_hash[:buy_tickets]
         @@all << self
 
@@ -17,24 +17,6 @@ class EventFinder::Details
     def self.all
         @@all
     end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end
